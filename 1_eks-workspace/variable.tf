@@ -13,7 +13,8 @@ variable "eks_cluster_version" {
 variable "ec2_key_pair" {
   # 이벤트 엔진에서 기본 제공되는 Key Pair 사용
   # default = "ee-default-keypair"
-  default = "hw-key"
+  # default = "hw-key"
+  default = "yuran"
 }
 
 variable "worker_node_instance_type" {
