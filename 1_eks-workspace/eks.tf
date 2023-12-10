@@ -6,6 +6,7 @@ module "eks" {
   cluster_endpoint_private_access       = true
   cluster_endpoint_public_access        = true
   cluster_additional_security_group_ids = [aws_security_group.security_group_eks_cluster.id]
+  kms_key_aliases = "kms_alias_test"
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
