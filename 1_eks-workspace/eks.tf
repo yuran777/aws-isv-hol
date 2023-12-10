@@ -10,6 +10,11 @@ module "eks" {
   kms_key_aliases = [
     "alias/yuran_key_examples",
   ]
+  lifecycle {
+    ignore_changes = [
+      kms_key_aliases,
+    ]
+  }
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
