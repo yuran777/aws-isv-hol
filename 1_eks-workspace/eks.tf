@@ -12,7 +12,7 @@ module "eks" {
   cluster_additional_security_group_ids = [aws_security_group.security_group_eks_cluster.id]
   # kms_key_aliases = "kms_alias_test"
   # kms_key_aliases = ["alias/yuran_key_examples"]
-  kms_key_aliases = data.aws_kms_key.existing_kms_key.arn
+  kms_key_aliases = data.aws_kms_key.existing_kms_key.arn[0]
   
   lifecycle {
     ignore_changes = [
